@@ -1,4 +1,5 @@
 let getForm = (subFunction, parent) => {
+    let formLi = createElem('div', ['container'])
     let budDiv = createElem('div', ['form-group'])
     let budgetLabel = createElem('label',[''], 'Budget') 
     let budget = createElem('input', ['form-control'])
@@ -6,6 +7,7 @@ let getForm = (subFunction, parent) => {
     budgetButton.addEventListener('click', event => {
         subFunction('budget', budget.value)
         budget.value = ''
+        
     })
     appendTo(budDiv, [budgetLabel, budget, budgetButton])
     let expenseDiv = createElem('div', ['form-group'])
@@ -20,21 +22,11 @@ let getForm = (subFunction, parent) => {
         subFunction('expense_amount',[expense.value, expenseAmt.value])
         expense.value = ''
         expenseAmt.value = ''
+        
     })
     appendTo(expenseAmtDiv, [expenseAmtLabel, expenseAmt, expenseAmtButton])
-    
-    appendTo(parent, [budDiv, expenseDiv, expenseAmtDiv])
+    appendTo(formLi, [budDiv, expenseDiv, expenseAmtDiv] )
+    appendTo(parent, [formLi])
 }
 
-let createElem = (type, elmsClass, value) => {
-    let newElm =  document.createElement(type)
-    if (elmsClass.length > 1)
-        elmsClass.map(cls => newElm.classList.add(cls))
-    if (value)
-        newElm.innerText = value
-    return newElm
-}
 
-let appendTo = (parent, children) => {
-    children.map(child => parent.appendChild(child))
-}
