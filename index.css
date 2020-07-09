@@ -1,0 +1,24 @@
+#main{
+    background-color: darkslategray;
+    box-shadow: darkslategray 2px 2px 2px;
+    color: whitesmoke;
+    border-radius: 10px;
+}
+
+.form-group input{
+    padding: 2%;
+    border-radius: 10px;
+    border: 1px darkslategray solid;
+    color: black;
+}
+
+div.headDisp h1{
+  border-bottom: whitesmoke dotted 1px;
+}
+
+.col-sm-4{
+    background-color: rgb(2, 2, 68);
+    border: solid darkslategray;
+    border-radius: 10px;
+    height: 100%;
+}
